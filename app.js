@@ -25,8 +25,15 @@ function validateZipcode(e){
   }
 }
 
-function validateEmail() {
+function validateEmail(e) {
+  const email = e.target.value;
+  const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z\.]{2,5})$/g;
 
+  if(!regex.test(email)){
+    e.target.classList.add('is-invalid');
+  } else {
+    e.target.classList.remove('is-invalid');
+  }
 }
 
 function validatePhone() {
