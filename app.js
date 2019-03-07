@@ -14,8 +14,15 @@ function validateName(e) {
   }
 }
 
-function validateZipcode(){
+function validateZipcode(e){
+  const eircode = e.target.value;
+  const regex = /^[a-zA-Z0-9]{7}$/g;
 
+  if(!regex.test(eircode)){
+    e.target.classList.add('is-invalid');
+  } else {
+    e.target.classList.remove('is-invalid');
+  }
 }
 
 function validateEmail() {
