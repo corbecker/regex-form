@@ -27,7 +27,7 @@ function validateZipcode(e){
 
 function validateEmail(e) {
   const email = e.target.value;
-  const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z\.]{2,5})$/g;
+  const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z\.]+)$/g;
 
   if(!regex.test(email)){
     e.target.classList.add('is-invalid');
@@ -36,6 +36,13 @@ function validateEmail(e) {
   }
 }
 
-function validatePhone() {
+function validatePhone(e) {
+  const phone = e.target.value;
+  const regex = /^\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$/g;
 
+  if(!regex.test(phone)){
+    e.target.classList.add('is-invalid');
+  } else {
+    e.target.classList.remove('is-invalid');
+  }
 }
